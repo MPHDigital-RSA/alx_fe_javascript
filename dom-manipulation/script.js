@@ -57,10 +57,16 @@ function addQuote () {
 
     quotes.push(newObj)
 
-    document.getElementById('createAddQuoteForm').value = "";
+    const li = document.createElement("li");
+    li.textContent = createAddQuoteForm;
+
+    document.getElementById("u-list").appendChild(li);
+
+    document.getElementById('newQuoteText').value = "";
     document.getElementById('newQuoteCategory').value = "";
 
-    console.log(quotes)
+    // console.log(quotes)
+
 
 }
 
