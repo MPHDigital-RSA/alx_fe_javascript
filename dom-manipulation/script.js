@@ -47,17 +47,17 @@ function showRandomQuote  () {
 function addQuote () {
     // console.log("new quote created")
 
-    const newQuoteText = document.getElementById('newQuoteText').value.trim();
+    const createAddQuoteForm = document.getElementById('newQuoteText').value.trim();
     const newQuoteCategory = document.getElementById('newQuoteCategory').value.trim();
 
     let newObj = {
-        "text" : newQuoteText,
+        "text" : createAddQuoteForm,
         "category" : newQuoteCategory
     }
 
     quotes.push(newObj)
 
-    document.getElementById('newQuoteText').value = "";
+    document.getElementById('createAddQuoteForm').value = "";
     document.getElementById('newQuoteCategory').value = "";
 
     console.log(quotes)
