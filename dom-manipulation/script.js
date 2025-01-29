@@ -40,8 +40,8 @@ const quotes = [
 function showRandomQuote  () {
 
     const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-    
-    quoteDisplay.textContent = quotes[randomQuoteIndex].text;
+
+    quoteDisplay.innerHTML = quotes[randomQuoteIndex].text;
 }
 
 newQuote.addEventListener ('click', showRandomQuote);
