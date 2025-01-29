@@ -34,7 +34,7 @@ const quotes = [
 ];
 
 
-// console.log(randomQuoteIndex)
+console.log(quotes)
 
 
 function showRandomQuote  () {
@@ -42,6 +42,26 @@ function showRandomQuote  () {
     const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
 
     quoteDisplay.innerHTML = quotes[randomQuoteIndex].text;
+}
+
+function addQuote () {
+    // console.log("new quote created")
+
+    const newQuoteText = document.getElementById('newQuoteText').value.trim();
+    const newQuoteCategory = document.getElementById('newQuoteCategory').value.trim();
+
+    let newObj = {
+        "text" : newQuoteText,
+        "category" : newQuoteCategory
+    }
+
+    quotes.push(newObj)
+
+    document.getElementById('newQuoteText').value = "";
+    document.getElementById('newQuoteCategory').value = "";
+
+    console.log(quotes)
+
 }
 
 newQuote.addEventListener ('click', showRandomQuote);
