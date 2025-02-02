@@ -57,6 +57,9 @@ function addQuote () {
 
     quotes.push(newObj)
 
+    localStorage.setItem('quotesArray', JSON.stringify(quotes));
+
+
     const li = document.createElement("li");
     li.textContent = createAddQuoteForm;
 
@@ -68,6 +71,17 @@ function addQuote () {
     // console.log(quotes)
 
 
+}
+
+function importFromJsonFile(event) {
+   const fileReader = new FileReader();
+   fileReader.onload = function(event) {
+     const importedQuotes = JSON.parse(event.target.result);
+     quotes.push(...importedQuotes);
+     saveQuotes();
+     alert('Quotes imported successfully!');
+    };
+    fileReader.readAsText(event.target.files[0]);
 }
 
 newQuote.addEventListener ('click', showRandomQuote);
